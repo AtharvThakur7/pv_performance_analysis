@@ -12,12 +12,12 @@ This project aims to create a powerful visualization tool that:
 - Aggregate PR and GHI data from multiple CSV files stored in year-month structured directories.
 - Generate a single cleaned dataset with Date, PR, and GHI columns.
 - Adds a 30-day moving average of PR as a red line.
-- Adds a dynamic target PR (budget) line based on yearly degradation (starting from 73.9% and reducing 0.8% every year).
+- Adds a dynamic target PR (budget) line based on yearly degradation
 - Includes a PR summary (last 7/30/60/90/365 days + lifetime average).
 - Includes count and % of points above the budget line.
 - Accept dynamic start_date and end_date to visualize specific timeframes.
 
-This helps technical teams monitor system health and enables business stakeholders to understand deviations from performance expectations.
+
 
 
 ## 📈 Output Graph
