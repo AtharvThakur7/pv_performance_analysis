@@ -16,19 +16,19 @@ def visualize_performance(csv_path='output/combined_data.csv', output_path='outp
     df = df.sort_values('Date')
     df = df.dropna(subset=['PR'])
 
-    # Filter based on input
+    
     if start_input:
         try:
             start_date = pd.to_datetime(start_input)
             df = df[df['Date'] >= start_date]
         except:
-            print("⚠️ Invalid start date format. Ignoring.")
+            print("Invalid start date format. Ignoring.")
     if end_input:
         try:
             end_date = pd.to_datetime(end_input)
             df = df[df['Date'] <= end_date]
         except:
-            print("⚠️ Invalid end date format. Ignoring.")
+            print("Invalid end date format. Ignoring.")
 
     # 30-day moving average (red line)
     df['PR_30_MA'] = df['PR'].rolling(window=30).mean()
@@ -59,7 +59,7 @@ def visualize_performance(csv_path='output/combined_data.csv', output_path='outp
         })
     ).reset_index()
 
-    # Begin Plotting
+    
     fig, ax = plt.subplots(figsize=(14, 8))
 
     ax.scatter(df['Date'], df['PR'], c=df['Color'], label='Daily PR', alpha=0.7)
@@ -95,7 +95,7 @@ def visualize_performance(csv_path='output/combined_data.csv', output_path='outp
     props = dict(boxstyle='round', facecolor='whitesmoke', alpha=0.8)
     ax.text(1.02, 0.05, stat_text, transform=ax.transAxes, fontsize=10, verticalalignment='bottom', bbox=props)
 
-    # --- NEW: Fiscal Year summary box (top-left inside plot) ---
+    
     fiscal_text_lines = []
     for _, row in fiscal_summary.iterrows():
         fiscal_text_lines.append(
