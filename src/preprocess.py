@@ -24,22 +24,7 @@ def preprocess_data(pr_dir, ghi_dir, output_file):
                 try:
 
 
-                    # # Read PR file (expecting 1 row, 1 value)
-                    # pr_df = pd.read_csv(pr_path)
-                    # pr_value = pr_df.iloc[0, 0]
-
-                    # # Read GHI file (expecting 1 row, 1 value)
-                    # ghi_df = pd.read_csv(ghi_path)
-                    # ghi_value = ghi_df.iloc[0, 0]
-
-                    # # Append to final data list
-                    # combined_data.append({
-                    #     'Date': date,
-                    #     'GHI': ghi_value,
-                    #     'PR': pr_value
-                    # })
-
-                    # new change in the code TODO: CHANGES 1 
+                  
                     
                     # Read PR file (expects column 'PR')
                     pr_df = pd.read_csv(pr_path)
